@@ -3,7 +3,7 @@
 
 extern "C"
 jstring
-Java_ifnot_cc_hello_MainActivity_stringFromJNI(
+Java_ifnot_xx_hello_MainActivity_stringFromJNI(
         JNIEnv* env,
         jobject /* this */) {
     std::string hello = "xxxxxxxxxx";
@@ -11,7 +11,7 @@ Java_ifnot_cc_hello_MainActivity_stringFromJNI(
 }
 
 jstring
-Java_ifnot_cc_hello_MainActivity_string_hello(
+Java_ifnot_xx_hello_MainActivity_string_hello__(
         JNIEnv* env,
         jobject){
         std::string hello = "it's good!";
