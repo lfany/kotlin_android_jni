@@ -13,7 +13,7 @@
 
         <meta-data
                 android:name="com.getsentry.raven.android.DSN"
-                android:value="https://555e8b7149cc46209d5746063278de30:ec23f568f9cc4324be0d5520bff57b59@sentry.io/175186"/>
+                android:value="http://a48fa6f8cbe749a8bfca33ede8c53d46:f812e3f041be4f00a46f00ca479e05b9@192.168.71.150/4"/>
 
         <activity android:name="MainActivity">
             <intent-filter>
