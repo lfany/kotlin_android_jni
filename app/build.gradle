@@ -1,6 +1,24 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+// go support
+//apply plugin: "org.golang.mobile.bind"
+
+//gobind {
+/* The Go package path; must be under one of the GOPATH elements or
+a relative to the current directory (e.g. ../../hello) */
+//    pkg = "golang.org/x/mobile/example/bind/hello"
+
+/* GOPATH where the Go package is; check `go env` */
+// GOPATH = "/YOUR/GOPATH"
+
+/* Absolute path to the go binary */
+// GO = "/PATH/TO/GO"
+
+/* Optionally, set the absolute path to the gomobile binary if the
+/* gomobile binary is not located in the GOPATH's bin directory. */
+// GOMOBILE = "/PATH/TO/GOMOBILE"
+//}
 
 android {
     compileSdkVersion 25
@@ -42,11 +60,12 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-
-    compile 'com.getsentry.raven:raven-android:8.0.3'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version" compile 'com.getsentry.raven:raven-android:8.0.3'
+    compile project(':hellogo')
 }
 repositories {
 //    mavenCentral()
-    maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+    maven {
+        url "http://maven.aliyun.com/nexus/content/groups/public"
+    }
 }
