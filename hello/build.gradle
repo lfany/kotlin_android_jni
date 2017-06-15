@@ -2,11 +2,10 @@
         * Use of this source code is governed by a BSD-style
 * license that can be found in the LICENSE file.
 */
-
-apply plugin: "org.golang.mobile.bind"
-//plugins {
-//    id "org.golang.mobile.bind" version "0.2.8"
-//}
+//apply plugin: "org.golang.mobile.bind"
+plugins {
+    id "org.golang.mobile.bind" version "0.2.8"
+}
 
 gobind {
     /* The Go package path; must be under one of the GOPATH elements or

@@ -1,1 +1,1 @@
-include ':app', ':hellogo'
+include ':app', ':hello'
