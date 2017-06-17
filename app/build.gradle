@@ -4,6 +4,10 @@ apply plugin: 'kotlin-android-extensions'
 // go support
 //apply plugin: "org.golang.mobile.bind"
 
+//plugins {
+//    id "org.golang.mobile.bind" version "0.2.8"
+//}
+
 //gobind {
 /* The Go package path; must be under one of the GOPATH elements or
 a relative to the current directory (e.g. ../../hello) */
@@ -11,13 +15,14 @@ a relative to the current directory (e.g. ../../hello) */
 
 /* GOPATH where the Go package is; check `go env` */
 // GOPATH = "/YOUR/GOPATH"
+//    GOPATH = "/Users/ifnot/go/path"
 
 /* Absolute path to the go binary */
-// GO = "/PATH/TO/GO"
+// GO = "/usr/local/Cellar/go/1.8.3/libexec"
 
 /* Optionally, set the absolute path to the gomobile binary if the
 /* gomobile binary is not located in the GOPATH's bin directory. */
-// GOMOBILE = "/PATH/TO/GOMOBILE"
+// GOMOBILE = "/Users/ifnot/go/path/bin/gomobile"
 //}
 
 android {
@@ -39,6 +44,10 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            shrinkResources false
+            debuggable false
+            jniDebuggable false
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -51,9 +60,17 @@ android {
         main.kotlin.srcDirs += 'src/main/kotlin'
         main.java.srcDirs += 'src/main/kotlin'
     }
+
+//    tasks.withType(JavaCompile) {
+//        compileTask -> compileTask.dependsOn tasks.getByPath('gobind')
+//    }
 }
 
 dependencies {
+    compile project(':hello')
+//    compile (name: 'hello', ext: 'aar')
+//    compile files(project(':hello').file(project(':hello').name + '.jar'))
+
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -63,12 +80,19 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
     compile 'com.getsentry.raven:raven-android:8.0.3'
-
-    compile project(':hello')
 }
 repositories {
 //    mavenCentral()
     maven {
         url "http://maven.aliyun.com/nexus/content/groups/public"
     }
+//    flatDir {
+//        dirs '../hello'
+//    }
+}
+
+task aa() {
+//    android.applicationVariants.all { variant ->
+//        println(variant.name)
+//    }
 }

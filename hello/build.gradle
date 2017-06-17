@@ -2,9 +2,10 @@
         * Use of this source code is governed by a BSD-style
 * license that can be found in the LICENSE file.
 */
-//apply plugin: "org.golang.mobile.bind"
+//apply plugin: "org.golang.mobile.bind2"
 plugins {
-    id "org.golang.mobile.bind" version "0.2.8"
+    id "org.golang.mobile.bind2" version "0.1.12"
+//    id "com.android.library"
 }
 
 gobind {
@@ -14,11 +15,46 @@ a relative to the current directory (e.g. ../../hello) */
 
 /* GOPATH where the Go package is; check `go env` */
 // GOPATH = "/YOUR/GOPATH"
+//    GOPATH=System.getenv('GOPATH')
+//    GOPATH = "/Users/ifnot/go/path"
 
 /* Absolute path to the go binary */
 // GO = "/PATH/TO/GO"
+//    GO = "/usr/local/Cellar/go/1.8.3/libexec"
 
 /* Optionally, set the absolute path to the gomobile binary if the
 /* gomobile binary is not located in the GOPATH's bin directory. */
 // GOMOBILE = "/PATH/TO/GOMOBILE"
+//    GOMOBILE = "/Users/ifnot/go/path/bin/gomobile"
+
+    /* optional: extra flags to be passed to gomobile command. */
+//    GOMOBILEFLAGS = ""
 }
+
+repositories {
+//    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+    maven {
+        url "http://maven.aliyun.com/nexus/content/groups/public"
+    }
+}
+
+//task printEnv() {
+//    println('=======')
+//    for(i in project.rootProject.subprojects){
+//        println('xx' + i.name)
+//        if(i.plugins.hasPlugin('android')
+//        || i.plugins.hasPlugin('com.android.application')) {
+//            println('hello' + i.name)
+//            println(i.tasks.toListString())
+//            i.tasks.getByPath('preBuild').dependsOn(tasks.getByPath('gobind'))
+//            i.android.applicationVariants.all { variant ->
+////                println('hello' + i.name)
+//                println(variant.name)
+//            }
+//        }
+//    }
+//    println('=======')
+//}
