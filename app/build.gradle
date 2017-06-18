@@ -2,16 +2,16 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 // go support
-//apply plugin: "org.golang.mobile.bind"
+apply plugin: "org.golang.mobile.bind2"
 
 //plugins {
 //    id "org.golang.mobile.bind" version "0.2.8"
 //}
 
-//gobind {
+gobind {
 /* The Go package path; must be under one of the GOPATH elements or
 a relative to the current directory (e.g. ../../hello) */
-//    pkg = "golang.org/x/mobile/example/bind/hello"
+    pkg = "golang.org/x/mobile/example/bind/hello"
 
 /* GOPATH where the Go package is; check `go env` */
 // GOPATH = "/YOUR/GOPATH"
@@ -23,7 +23,7 @@ a relative to the current directory (e.g. ../../hello) */
 /* Optionally, set the absolute path to the gomobile binary if the
 /* gomobile binary is not located in the GOPATH's bin directory. */
 // GOMOBILE = "/Users/ifnot/go/path/bin/gomobile"
-//}
+}
 
 android {
     compileSdkVersion 25
@@ -61,14 +61,15 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
-//    tasks.withType(JavaCompile) {
+//    tasks.withType(preBuild) {
 //        compileTask -> compileTask.dependsOn tasks.getByPath('gobind')
 //    }
 }
 
 dependencies {
-    compile project(':hello')
+//    compile project(':hello')
 //    compile (name: 'hello', ext: 'aar')
+//        compile (name: project(':hello').file(project(':hello').name, ext: 'aar'))
 //    compile files(project(':hello').file(project(':hello').name + '.jar'))
 
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -91,8 +92,8 @@ repositories {
 //    }
 }
 
-task aa() {
+//task aa() {
 //    android.applicationVariants.all { variant ->
 //        println(variant.name)
 //    }
-}
+//}
