@@ -1,7 +1,7 @@
 package ifnot.xx.hello
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.MotionEvent
 import hello.Hello
 import kotlinx.android.synthetic.main.activity_main2.*
@@ -15,8 +15,10 @@ class Main22Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        title = Hello.greetings("hello go")
-        tv.text = stringHello()
+        title = Hello.title("hello")
+        tv.text = stringHello("Jni")
+
+        tv2.text = Hello.greetings("go")
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
@@ -29,5 +31,5 @@ class Main22Activity : AppCompatActivity() {
         }
     }
 
-    external fun stringHello(): String
+    external fun stringHello(name: String): String
 }

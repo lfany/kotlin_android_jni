@@ -11,7 +11,7 @@ apply plugin: "org.golang.mobile.bind2"
 gobind {
 /* The Go package path; must be under one of the GOPATH elements or
 a relative to the current directory (e.g. ../../hello) */
-    pkg = "golang.org/x/mobile/example/bind/hello"
+    pkg = "github.com/lfany/mobile/example/bind/hello"
 
 /* GOPATH where the Go package is; check `go env` */
 // GOPATH = "/YOUR/GOPATH"
