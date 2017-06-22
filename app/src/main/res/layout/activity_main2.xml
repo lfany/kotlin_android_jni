@@ -22,4 +22,20 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv"
         android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/btn_err"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv2"
+        android:text="Go Raven Error" />
+
+    <Button
+        android:id="@+id/btn_crash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv2"
+        android:layout_alignParentEnd="true"
+        android:text="Go Raven Crash" />
+
 </RelativeLayout>
